@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script>
+       /* 
+        var a=5;
+        var a=12;
+        alert(a);   可行
+        */
+       
+        /*
+        let a=5;
+        let a=12;
+        alert(a);  报错，重复声明
+        */
+
+        /*
+        let a=5;
+        a=12;
+        alert(a);   可行，因为let是变量
+        */ 
+
+        /*
+        if(true){
+            const a=12;
+        }
+        alert(a);  报错，因为const和let都是块级作用域，语法块之外相当于无定义
+        */
+
+        /*
+        if(true){
+            var a=5;
+        }
+        alert(a); 可行，因为var的作用域是函数
+        */
+       window.onload=function(){
+           var aBtn=document.getElementsByTagName('input');
+           for(var i=0;i<aBtn.length;i++){
+               aBtn[i].onclick=function(){
+                   alert(i);
+               }
+           }
+       }
+        
+    </script>
+</head>
+<body>
+    <input type='button' value='按钮1'>
+    <input type='button' value='按钮2'>
+    <input type='button' value='按钮3'>
+</body>
+</html>
