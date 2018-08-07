@@ -344,6 +344,39 @@ export default class SLAModificationModal extends React.Component{
         handleError(error);
       });
   }
+  
+  render(){
+	  const {loading,loadingHint,propertyViewModels,dataChanged}=this.state;
+	  const allowSubmit=dataChanged&&propertyViewModels.reduce((first,second)=>({validData:first.validData&&second.validData})).validData;//???不是返回结果就已经是validdata了吗
+	  
+	  return(){
+		  <modal
+			destroyOnClose
+			wrapClassName="vertical-center-modal new_modal"
+			title={<div className='img_container'><img className='edit_img' src={require('../Resources/images/icon_edit.png')} alt=''/>Edit Entry</div>
+			visible={this.props.visible}
+			onCancel={()=>{this.handleCancel();}}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
