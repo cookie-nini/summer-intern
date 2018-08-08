@@ -1,0 +1,36 @@
+1、对象：带有属性和方法的特殊数据类型
+javascript中的所有事物都是对象：字符串、数组、数值、函数....
+此外，javascript允许自定义对象，有两种创建方法：
+a、定义并创建对象的实例
+person=new Object();
+person.firstname="Bill";
+person.lastname="Gates";
+person.age=56;
+person.eyecolor="blue";
+或
+person={firstname:"John",lastname:"Doe",age:50,eyecolor:"blue"};
+b、使用函数来定义对象，然后创建新的对象实例
+function person(firstname,lastname,age,eyecolor)
+{
+this.firstname=firstname;
+this.lastname=lastname;
+this.age=age;
+this.eyecolor=eyecolor;
+}
+创建对象实例
+var myFather=new person("Bill","Gates",56,"blue");
+var myMother=new person("Steve","Jobs",48,"green");
+添加方法，在构造器函数内部定义
+function person(firstname,lastname,age,eyecolor)
+{
+this.firstname=firstname;
+this.lastname=lastname;
+this.age=age;
+this.eyecolor=eyecolor;
+
+this.changeName=changeName;
+function changeName(name)
+{
+this.lastname=name;
+}
+}

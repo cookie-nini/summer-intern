@@ -14,6 +14,10 @@ export default class PostList extends React.Component{
         this.handleVote=this.handleVote.bind(this);
     }
 
+    componentDidMount(){
+        
+    }
+
     handleVote(id){
        
         const post=this.state.posts;
@@ -52,4 +56,17 @@ const {post}=props; //同理右边是个对象，所以左边最外面要加{}�
 {}不是乱加的。在jsx语法里面，如果要解析表达式就要{}，但<></>明显不是表达式，所以不要{}，或者加（）。如果<></>里面有表达式，即html解析不了的，再在这个表达式上加{}
 
 在数组方法里，()=>{}，如果想用{}，里面就必须是表达式，要用return，如果没有就不行,可以用（）
+
+
+关于定时器
+js定时器有两个方法  注意，如果是代码串就要加“”
+setInterval("function",millisec),按照指定的周期（以毫秒计）来调用函数或计算表达式。方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭。
+前一个参数是要调用的函数或执行的代码串，第二个参数是时间间隔
+
+setTimeout(function,millisec),在指定的毫秒数后调用函数或计算表达式。
+function myFunction()
+{
+    setTimeout(function(){alert("Hello")},3000);
+}
+
 */
