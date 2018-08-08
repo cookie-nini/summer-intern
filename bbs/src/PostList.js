@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PostItem from './PostItem';
 
@@ -12,10 +13,6 @@ export default class PostList extends React.Component{
             ]
         };
         this.handleVote=this.handleVote.bind(this);
-    }
-
-    componentDidMount(){
-        
     }
 
     handleVote(id){
