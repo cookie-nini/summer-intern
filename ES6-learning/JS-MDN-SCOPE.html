@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Function scope example</title>
+</head>
+<body>
+  
+  <script>
+    /*
+    var x = 1;
+    function a() {
+      var y = 2;
+    }
+    function b() {
+      var z = 3;
+    }
+    function output(value) {
+      var para = document.createElement('p');
+      document.body.appendChild(para);
+      para.textContent = 'Value: ' + value;
+    }  这里，x是一个全局变量，y，z是局部变量，也可以说成是函数a、b里的全局变量
+    */
+
+    /*
+    function foo() 
+    {
+    var x = 1;  // x相当于foo函数里的全局变量，整个函数都可以访问
+    function bar() 
+    {
+        var y = x + 1; // bar可以访问foo的变量x! y是bar函数里的全局变量，但是bar函数外不可以访问
+    }
+    var z = y + 1; // ReferenceError! foo不可以访问bar的变量y!
+    }
+    */
+
+    /*
+    function foo() 
+    {
+    var x = 1;
+    function bar() 
+    {
+        var x = 'A';
+        console.log('x in bar() = ' + x); // 'A' ，同名变量后出现的覆盖
+    }
+    console.log('x in foo() = ' + x); // 1 ，外部函数不能访问bar函数的内部变量X，所以对于这句话来说，只有一个x，就是全局变量的x
+    bar();
+    }
+    foo();
+    */
+
+
+  </script>
+</body>
+</html>

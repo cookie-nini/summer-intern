@@ -34,15 +34,46 @@
         }
         alert(a); 可行，因为var的作用域是函数
         */
-       window.onload=function(){
+
+        /*
+       window.onload=function()
+       {
            var aBtn=document.getElementsByTagName('input');
-           for(var i=0;i<aBtn.length;i++){
-               aBtn[i].onclick=function(){
+           for(var i=0;i<aBtn.length;i++)
+           {
+               aBtn[i].onclick=function()
+               {
                    alert(i);
                }
            }
-       }
+       } 首先理解这个函数的作用，循环，依次在每个按钮上绑上一个onclick事件。绑完之后，这个for循环就结束了！当点击某个按钮时会执行alert。
+         其实for循环的执行是这样的：
+         {
+             {
+                 i=0；
+                 。。。
+             }
+             {
+                 i=1；
+                 。。。
+             }
+             {
+                 i=2；
+                 。。。
+             }
+         }
+         var的作用域是函数，意思是在window.onload=function这个函数里，var是全局变量，每次for循环改变的都是同一个var。所以当这个函数执行
+         结束的时候，i的值为3，然后每次点击执行alert时，对应的i都是3。明确for循环执行结束了，也就是整个函数读取完了，然后点击才会触发事件。
+         如果把var改为let，let的作用域是块，就是说每一个for有一个块，都对应一个i，有三个i值，依次是1，2，3.这样每次点击弹出不同值
+       */
+       
+
+  var a=0;
+  alert(a);
+  
+
         
+
     </script>
 </head>
 <body>
