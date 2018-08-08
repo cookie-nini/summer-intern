@@ -356,6 +356,15 @@ export default class SLAModificationModal extends React.Component{
 			title={<div className='img_container'><img className='edit_img' src={require('../Resources/images/icon_edit.png')} alt=''/>Edit Entry</div>
 			visible={this.props.visible}
 			onCancel={()=>{this.handleCancel();}}
+			onOk={()=>{this.handleSubmit();}}
+			 footer={[
+          <Button key="back" onClick={() => { this.handleCancel(); }}>Cancel</Button>,
+          <Button key="submit" type="primary" disabled={!allowSubmit} onClick={() => { this.handleSubmit(); }}>Update</Button>,
+                    ]}
+		  >
+			<Loading isLoading={loading}
+		  </Modal>
+      >
 	
 	
 	
