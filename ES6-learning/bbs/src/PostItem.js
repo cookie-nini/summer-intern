@@ -1,24 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './PostItem.css';
+import like from './img/thumb.png';
 
-function PostItem(props){
-    const {post}=props;
-    const handleClick=()=>{props.onVote(post.id)};
-    return(
-        <li className='item'>
-            <p className='title'>{post.title}</p>
-            <p>创建人： {post.author}</p>
-            <p>创建时间： {post.date}</p>
-            <div className='like'>
-                <span><img onClick={handleClick}/></span>
-                <span>{post.vote}</span>
-            </div>
-        </li>
-    )
+export default class PostItem extends React.Component{
+    constructor(props){
+        super(props);
+        this.handleClick=this.handleClick.bind(this);
+    }
+
+    handleClick(){
+        this.props.onVote(this.props.post.id);
+    }
+
+    render(){
+        const {post}=props;
+        return(
+            <li className='item'>
+                <div className='title'>{post.title}</div>
+                <div>创建人： {post.author}</div>
+                <div>创建时间： {post.date}</div>
+                <div className='like'>
+                    <span><img src={like} alt=''onClick={this.handleClick}/></span>
+                    <span>{post.vote}</span>
+                </div>
+            </li>   //试着去实现点赞变色
+        )
+    }
 }
-
-export default PostItem;
 
 PostItem.propType={
     post:PropTypes.shape({

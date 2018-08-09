@@ -43,7 +43,7 @@ export default class PostList extends React.Component{
 			<h2>话题列表</h2>
 			<ul>
 				{this.state.posts.map(item=>
-                    <PostItem post={item} onVote={this.handleVote}/>
+                    <PostItem key={item.id} post={item} onVote={this.handleVote}/>
                 )}
 			</ul>
 		</div>
